@@ -44,8 +44,11 @@ gsap.to('.hero-headline .sliced-text', {
     '--slice-x2': '0px', '--slice-y2': '0px', '--slice-r2': '0deg', '--slice-s2': '0px', '--slice-c2': 'transparent',
     ease: 'none'
 });
-const splitManifesto = new SplitType('.manifesto-text', { types: 'lines, words' });
-gsap.to(splitManifesto.words, { scrollTrigger: { trigger: '.about', start: 'top 80%', end: 'center center', scrub: 1 }, y: '0%', stagger: 0.1, ease: 'power1.out', duration: 1 });
+// Wait for fonts to load before splitting text to ensure correct line breaks
+document.fonts.ready.then(() => {
+    const splitManifesto = new SplitType('.manifesto-text', { types: 'lines, words' });
+    gsap.to(splitManifesto.words, { scrollTrigger: { trigger: '.about', start: 'top 80%', end: 'center center', scrub: 1 }, y: '0%', stagger: 0.1, ease: 'power1.out', duration: 1 });
+});
 gsap.utils.toArray('.project-card').forEach((card) => {
     gsap.from(card, { scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none reverse' }, y: 100, opacity: 0, duration: 1.2, ease: 'expo.out' });
 });
