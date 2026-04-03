@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Vanguard | Creative Developer & Elite UI/UX Designer</title>
+    <!-- CSS Dependencies -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts: Anton (Huge Sans), Permanent Marker (Chaos), Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body class="loading">
-    <div class="loader"><div class="loader-counter">0%</div></div>
-    <div class="cursor"><div class="cursor-dot"></div><div class="cursor-text"></div></div>
+    
+    <!-- Loader (Progressive Enhancement) -->
+    <div class="loader">
+        <div class="loader-counter">0%</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-text"></div>
+    </div>
+
+    <!-- Background Noise Overlay -->
     <canvas id="noise-canvas"></canvas>
+
+    <!-- Navigation -->
     <nav class="nav">
         <a href="#" class="nav-brand" data-magnetic>HUDIA_V.</a>
         <div class="nav-links">
@@ -21,10 +37,15 @@
             <a href="#contact" class="nav-link" data-magnetic>Contact</a>
         </div>
     </nav>
+
+    <!-- Main Container for Smooth Scrolling -->
     <main id="smooth-wrapper">
         <div id="smooth-content">
+            
+            <!-- 01. Hero Section -->
             <section class="hero" id="hero">
                 <div class="hero-container">
+
                     <h1 class="hero-headline">
                         <div class="line"><span class="word">Immersive</span></div>
                         <div class="line"><span class="word sliced-text" data-text="Digital">Digital</span></div>
@@ -39,12 +60,18 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 02. About / Manifesto Section -->
             <section class="about" id="about">
                 <div class="container">
                     <div class="about-grid">
-                        <div class="about-col"><p class="section-label">02. THE MANIFESTO</p></div>
                         <div class="about-col">
-                            <h2 class="manifesto-text">I engineer digital realms that seamlessly blur the boundary between cutting-edge design and robust engineering. Driven by motion, spatial balance, and progressive enhancement.</h2>
+                            <p class="section-label">02. THE MANIFESTO</p>
+                        </div>
+                        <div class="about-col">
+                            <h2 class="manifesto-text">
+                                I engineer digital realms that seamlessly blur the boundary between cutting-edge design and robust engineering. Driven by motion, spatial balance, and progressive enhancement.
+                            </h2>
                             <div class="skills-list">
                                 <span class="skill-tag">Interaction Design</span>
                                 <span class="skill-tag">Creative Development</span>
@@ -55,39 +82,61 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 03. Featured Works Section -->
             <section class="works" id="works">
                 <div class="container">
                     <div class="works-header">
                         <h2 class="section-title">Selected Works</h2>
                         <p class="works-count">(&#x2193; 04 Cases)</p>
                     </div>
+                    
                     <div class="works-grid">
+                        <!-- Project 1 -->
                         <article class="project-card large" data-cursor="View Case">
-                            <div class="project-image-wrapper"><div class="project-image bg-1"></div><div class="project-overlay"></div></div>
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-1"></div>
+                                <div class="project-overlay"></div>
+                            </div>
                             <div class="project-info">
                                 <div class="project-meta"><span>eCommerce</span> &mdash; <span>2025</span></div>
                                 <h3 class="project-title">Aethelwear Vanguard</h3>
                                 <p class="project-role">Lead Design & Dev</p>
                             </div>
                         </article>
+
+                        <!-- Project 2 -->
                         <article class="project-card wide" data-cursor="View Case">
-                            <div class="project-image-wrapper"><div class="project-image bg-2"></div><div class="project-overlay"></div></div>
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-2"></div>
+                                <div class="project-overlay"></div>
+                            </div>
                             <div class="project-info">
                                 <div class="project-meta"><span>Fintech Platform</span> &mdash; <span>2024</span></div>
                                 <h3 class="project-title">Nexus Global Banking</h3>
                                 <p class="project-role">UX Architect</p>
                             </div>
                         </article>
+
+                        <!-- Project 3 -->
                         <article class="project-card" data-cursor="View Case">
-                            <div class="project-image-wrapper"><div class="project-image bg-3"></div><div class="project-overlay"></div></div>
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-3"></div>
+                                <div class="project-overlay"></div>
+                            </div>
                             <div class="project-info">
                                 <div class="project-meta"><span>Web3 & Blockchain</span> &mdash; <span>2024</span></div>
                                 <h3 class="project-title">Orbital DAO Protocol</h3>
                                 <p class="project-role">Creative Developer</p>
                             </div>
                         </article>
+
+                        <!-- Project 4 -->
                         <article class="project-card" data-cursor="View Case">
-                            <div class="project-image-wrapper"><div class="project-image bg-4"></div><div class="project-overlay"></div></div>
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-4"></div>
+                                <div class="project-overlay"></div>
+                            </div>
                             <div class="project-info">
                                 <div class="project-meta"><span>Digital Agency</span> &mdash; <span>2023</span></div>
                                 <h3 class="project-title">Studio Synthetica</h3>
@@ -97,16 +146,20 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 04. Footer / Contact -->
             <footer class="contact" id="contact">
                 <div class="footer-bg"></div>
                 <div class="container footer-container">
                     <p class="section-label">04. LET'S COLLABORATE</p>
-                    <h2 class="letstalk">
-                        <a href="#" id="copy-email-btn" class="footer-cta" data-magnetic>
-                            <span class="word defaced-text footer-defaced" data-text="Let's build it.">Have an idea?</span>
-                        </a>
-                    </h2>
+                    <div class="letstalk">
+                        <div class="cta-block" id="copy-email-btn" data-magnetic>
+                            <span class="cta-line cta-main-line">Have an idea?</span>
+                            <span class="cta-line cta-sub-line">LET'S BUILD IT.</span>
+                        </div>
+                    </div>
                     <div class="copy-feedback">Email copied to clipboard!</div>
+                    
                     <div class="footer-bottom">
                         <div class="socials">
                             <a href="#" class="social-link" data-magnetic>Twitter / X</a>
@@ -121,12 +174,19 @@
                     </div>
                 </div>
             </footer>
+
         </div>
     </main>
+
+    <!-- Scripts Dependencies -->
+    <!-- Lenis for smooth scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP for core animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SplitType for easy text animations -->
     <script src="https://unpkg.com/split-type"></script>
+    <!-- Custom Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
