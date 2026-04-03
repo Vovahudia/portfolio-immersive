@@ -1,145 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aesthetic Direction — Quiet Luxury</title>
-  <meta name="description" content="A minimalist high-fashion portfolio wireframe balancing visual tofu and pure typography.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian Vanguard | Creative Developer & Elite UI/UX Designer</title>
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts: Anton (Huge Sans), Permanent Marker (Chaos), Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
-<body class="page">
-  <header class="header">
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="/" class="nav__logo" aria-label="Return to homepage">Studio.</a>
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#works" class="nav__link">Selected Works</a></li>
-        <li class="nav__item"><a href="#philosophy" class="nav__link">Philosophy</a></li>
-        <li class="nav__item"><a href="#capabilities" class="nav__link">Capabilities</a></li>
-      </ul>
-      <a href="#contact" class="nav__contact" aria-label="Initiate contact">Inquire</a>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="hero__container">
-        <p class="hero__meta" aria-hidden="true">— 01 / Introduction</p>
-        <h1 id="hero-title" class="hero__title">
-          <span class="hero__title-line">Digital</span>
-          <span class="hero__title-line hero__title-line--serif">Curator &amp;</span>
-          <span class="hero__title-line">Experience Designer</span>
-        </h1>
-        <p class="hero__subtitle">
-          Crafting serene digital environments. Elevating brands through the architecture of quiet luxury and intentional negative space.
-        </p>
-      </div>
-    </section>
-
-    <section id="works" class="gallery" aria-labelledby="gallery-title">
-      <header class="gallery__header">
-        <p class="gallery__header-meta" aria-hidden="true">— 02 / Archive</p>
-        <h2 id="gallery-title" class="gallery__header-title">Selected Works</h2>
-      </header>
-      <div class="gallery__grid">
-        <article class="project project--featured">
-          <figure class="project__figure">
-            <div class="project__image-wrapper">
-              <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2670&auto=format&fit=crop" class="project__image" alt="Aesthetic spatial design for Project Alpha" loading="lazy">
-            </div>
-            <figcaption class="project__caption">
-              <h3 class="project__title">The Aisthesis Collection</h3>
-              <p class="project__category">Digital Curation</p>
-            </figcaption>
-          </figure>
-          <a href="#" class="project__link" aria-label="View The Aisthesis Collection">View Case Study</a>
-        </article>
-        <article class="project">
-          <figure class="project__figure">
-            <div class="project__image-wrapper">
-              <img src="https://images.unsplash.com/photo-1490216781747-97d917f35422?q=80&w=2564&auto=format&fit=crop" class="project__image" alt="Editorial layout for Brand Beta" loading="lazy">
-            </div>
-            <figcaption class="project__caption">
-              <h3 class="project__title">Maison Blanc</h3>
-              <p class="project__category">Identity System</p>
-            </figcaption>
-          </figure>
-          <a href="#" class="project__link" aria-label="View Maison Blanc Case Study">View Case Study</a>
-        </article>
-        <article class="project project--offset">
-          <figure class="project__figure">
-            <div class="project__image-wrapper">
-              <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=2670&auto=format&fit=crop" class="project__image" alt="E-commerce experience for Gamma" loading="lazy">
-            </div>
-            <figcaption class="project__caption">
-              <h3 class="project__title">Atelier Noir</h3>
-              <p class="project__category">E-Commerce Experience</p>
-            </figcaption>
-          </figure>
-          <a href="#" class="project__link" aria-label="View Atelier Noir Case Study">View Case Study</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="philosophy" class="philosophy" aria-labelledby="philosophy-title">
-      <article class="philosophy__article">
-        <h2 id="philosophy-title" class="visually-hidden">My Philosophy</h2>
-        <p class="philosophy__quote">
-          "True elegance is defined not by the abundance of decoration, but by the perfection of the underlying grid and the courage to leave space empty."
-        </p>
-        <span class="philosophy__signature">The Visual Tofu Manifesto</span>
-      </article>
-    </section>
-
-    <section id="capabilities" class="capabilities" aria-labelledby="cap-title">
-      <header class="capabilities__header">
-        <p class="capabilities__header-meta" aria-hidden="true">— 03 / Expertise</p>
-        <h2 id="cap-title" class="capabilities__header-title">Systematic Capabilities</h2>
-      </header>
-      <ul class="capabilities__list">
-        <li class="capability">
-          <h3 class="capability__title">Digital Architecture</h3>
-          <p class="capability__desc">Structuring complex platforms with seamless user experiences.</p>
-        </li>
-        <li class="capability">
-          <h3 class="capability__title">Immersive Interaction</h3>
-          <p class="capability__desc">Elevating emotional connections through subtle, meaningful motion.</p>
-        </li>
-        <li class="capability">
-          <h3 class="capability__title">Visual Systems</h3>
-          <p class="capability__desc">Creating scalable, high-end design languages for modern brands.</p>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer id="contact" class="footer">
-    <div class="footer__container">
-      <div class="footer__cta">
-        <p class="footer__meta" aria-hidden="true">— 04 / Engagement</p>
-        <h2 class="footer__heading">Ready to step into <br> the gallery?</h2>
-        <a href="mailto:hello@example.com" class="footer__email-link" aria-label="Send email to initiate contact">Start a Conversation</a>
-      </div>
-      <nav class="footer__nav" aria-label="Footer Nav">
-        <div class="footer__nav-group">
-          <h3 class="footer__nav-title">Social</h3>
-          <ul class="footer__socials">
-            <li><a href="#" class="footer__link">LinkedIn</a></li>
-            <li><a href="#" class="footer__link">Instagram</a></li>
-            <li><a href="#" class="footer__link">Awwwards</a></li>
-          </ul>
-        </div>
-        <div class="footer__resume">
-          <a href="#" class="footer__link footer__link--underline">Download CV</a>
-        </div>
-      </nav>
-      <div class="footer__bottom">
-        <span>© 2026 Visual Tofu Studio</span>
-        <span>Crafted with restraint.</span>
-      </div>
+<body class="loading">
+    
+    <!-- Loader (Progressive Enhancement) -->
+    <div class="loader">
+        <div class="loader-counter">0%</div>
     </div>
-  </footer>
+
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-text"></div>
+    </div>
+
+    <!-- Background Noise Overlay -->
+    <canvas id="noise-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="nav-brand" data-magnetic>HUDIA_V.</a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-magnetic>Index</a>
+            <a href="#works" class="nav-link" data-magnetic>Selected Work</a>
+            <a href="#contact" class="nav-link" data-magnetic>Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Container for Smooth Scrolling -->
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- 01. Hero Section -->
+            <section class="hero" id="hero">
+                <div class="hero-container">
+
+                    <h1 class="hero-headline">
+                        <div class="line"><span class="word">Immersive</span></div>
+                        <div class="line"><span class="word sliced-text" data-text="Digital">Digital</span></div>
+                        <div class="line"><span class="word defaced-text" data-text="Experiences.">PORTFOLIO.</span></div>
+                    </h1>
+                    <div class="hero-bottom fade-in-up">
+                        <p class="role">Creative Frontend Developer<br>& Elite UI/UX Designer.</p>
+                        <div class="scroll-indicator">
+                            <span class="indicator-text">SCROLL TO EXPLORE</span>
+                            <div class="indicator-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. About / Manifesto Section -->
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <p class="section-label">02. THE MANIFESTO</p>
+                        </div>
+                        <div class="about-col">
+                            <h2 class="manifesto-text">
+                                I engineer digital realms that seamlessly blur the boundary between cutting-edge design and robust engineering. Driven by motion, spatial balance, and progressive enhancement.
+                            </h2>
+                            <div class="skills-list">
+                                <span class="skill-tag">Interaction Design</span>
+                                <span class="skill-tag">Creative Development</span>
+                                <span class="skill-tag">UI/UX Strategy</span>
+                                <span class="skill-tag">WebGL & GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03. Featured Works Section -->
+            <section class="works" id="works">
+                <div class="container">
+                    <div class="works-header">
+                        <h2 class="section-title">Selected Works</h2>
+                        <p class="works-count">(&#x2193; 04 Cases)</p>
+                    </div>
+                    
+                    <div class="works-grid">
+                        <!-- Project 1 -->
+                        <article class="project-card large" data-cursor="View Case">
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-1"></div>
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-meta"><span>eCommerce</span> &mdash; <span>2025</span></div>
+                                <h3 class="project-title">Aethelwear Vanguard</h3>
+                                <p class="project-role">Lead Design & Dev</p>
+                            </div>
+                        </article>
+
+                        <!-- Project 2 -->
+                        <article class="project-card wide" data-cursor="View Case">
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-2"></div>
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-meta"><span>Fintech Platform</span> &mdash; <span>2024</span></div>
+                                <h3 class="project-title">Nexus Global Banking</h3>
+                                <p class="project-role">UX Architect</p>
+                            </div>
+                        </article>
+
+                        <!-- Project 3 -->
+                        <article class="project-card" data-cursor="View Case">
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-3"></div>
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-meta"><span>Web3 & Blockchain</span> &mdash; <span>2024</span></div>
+                                <h3 class="project-title">Orbital DAO Protocol</h3>
+                                <p class="project-role">Creative Developer</p>
+                            </div>
+                        </article>
+
+                        <!-- Project 4 -->
+                        <article class="project-card" data-cursor="View Case">
+                            <div class="project-image-wrapper">
+                                <div class="project-image bg-4"></div>
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-meta"><span>Digital Agency</span> &mdash; <span>2023</span></div>
+                                <h3 class="project-title">Studio Synthetica</h3>
+                                <p class="project-role">Creative Direction</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. Footer / Contact -->
+            <footer class="contact" id="contact">
+                <div class="footer-bg"></div>
+                <div class="container footer-container">
+                    <p class="section-label">04. LET'S COLLABORATE</p>
+                    <div class="letstalk">
+                        <div class="cta-block" id="copy-email-btn" data-magnetic>
+                            <span class="cta-line cta-main-line">Have an idea?</span>
+                            <span class="cta-line cta-sub-line">LET'S BUILD IT.</span>
+                        </div>
+                    </div>
+                    <div class="copy-feedback">Email copied to clipboard!</div>
+                    
+                    <div class="footer-bottom">
+                        <div class="socials">
+                            <a href="#" class="social-link" data-magnetic>Twitter / X</a>
+                            <a href="#" class="social-link" data-magnetic>LinkedIn</a>
+                            <a href="#" class="social-link" data-magnetic>Awwwards</a>
+                            <a href="#" class="social-link" data-magnetic>GitHub</a>
+                        </div>
+                        <div class="credits">
+                            <p>&copy; 2026 Hudia V. Selected Works.</p>
+                            <p>Creative Execution for the Academic Commission.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts Dependencies -->
+    <!-- Lenis for smooth scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP for core animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SplitType for easy text animations -->
+    <script src="https://unpkg.com/split-type"></script>
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
