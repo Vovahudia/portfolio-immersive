@@ -9,5 +9,5 @@ Neo-Brutalist Immersive Portfolio — Creative Frontend Developer & Elite UI/UX 
 - SplitType (text animations)
 - Google Fonts: Anton, Inter, Permanent Marker
 
-## Live
-https://Vovahudia.github.io/portfolio-immersive
+## Live Demo
+https://vovahudia.github.io/portfolio-immersive
