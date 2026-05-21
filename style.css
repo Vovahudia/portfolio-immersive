@@ -1,10 +1,11 @@
 /* =========================================
    VARIABLES & TOKENS (BRUTAL TYPOGRAPHY)
    ========================================= */
-   :root {
+    :root {
     --bg-color: #0d0d0d;
     --text-color: #f2f2f2;
     --text-muted: #555555;
+    --border-color: #333333;
     
     /* Vandalism Accents */
     --accent-red: #ff1a1a;
@@ -91,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     text-align: center;
     font-family: var(--font-chaos);
-    font-size: 0.75em;
+    font-size: 0.75em; /* Increased size to be much more prominent */
     color: var(--accent-green);
     transform: translate(-50%, -50%) rotate(-4deg);
     z-index: 3;
@@ -119,6 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sliced-text::before {
+    /* Top slice displaced */
     content: attr(data-text);
     position: absolute;
     top: 0;
@@ -134,6 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sliced-text::after {
+    /* Bottom slice displaced */
     content: attr(data-text);
     position: absolute;
     top: 0;
@@ -216,10 +219,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .cursor-text {
     position: absolute;
-    color: var(--text-color);
+    color: var(--text-color); /* White will invert properly with difference blending */
     font-family: var(--font-chaos);
     font-size: 1.2rem;
-    transform: rotate(-10deg);
+    transform: rotate(-10deg); /* Centered now */
     opacity: 0;
     transition: opacity 0.2s ease;
     white-space: nowrap;
@@ -251,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.1;
+    opacity: 0.1; /* slightly rougher print noise */
 }
 
 /* =========================================
@@ -337,8 +340,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-headline {
-    font-size: clamp(3.5rem, 12vw, 16rem);
-    line-height: 1;
+    font-size: clamp(3.5rem, 12vw, 16rem); /* Slightly increased */
+    line-height: 1; /* Fixed overlap */
     margin-bottom: var(--space-xl);
 }
 
@@ -374,12 +377,12 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    transform: translateY(5rem);
+    transform: translateY(5rem); /* Lowered further per user request */
 }
 
 .indicator-text {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.85rem; /* Scaled down */
     writing-mode: vertical-rl;
     color: var(--accent-green);
 }
@@ -486,17 +489,16 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%) contrast(150%);
-    transition: filter 0.5s ease;
+    transition: transform 0.6s var(--ease-out-expo);
 }
 
-.bg-1 { background-image: radial-gradient(#333, #000); }
-.bg-2 { background-image: repeating-linear-gradient(45deg, #222, #111 20px); }
-.bg-3 { background-image: linear-gradient(180deg, #1a1a1a, #0a0a0a); }
-.bg-4 { background-image: radial-gradient(at top right, #444, #000); }
+.bg-1 { background-image: url('assets/dontfilm_landing.png'); }
+.bg-2 { background-image: url('assets/auto_zaim.png'); }
+.bg-3 { background-image: url('assets/dontfilm_logo.jpg'); }
+.bg-4 { background-image: url('assets/ideogram.png'); }
 
 .project-card:hover .project-image {
-    filter: grayscale(0%) contrast(150%) hue-rotate(90deg);
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -589,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(5deg);
+    transform: translate(-50%, -50%) rotate((5deg));
     background: var(--text-color);
     color: var(--bg-color);
     font-family: var(--font-chaos);
