@@ -24,9 +24,8 @@
 - Hero — "Immersive Digital PORTFOLIO." с sliced/defaced эффектами
 - About — манифест + skill tags
 - Works grid — 4 карточки с реальными изображениями и описаниями проектов
-- Footer — copy email кнопка, соцсети (ссылки пустые)
+- Footer — copy email кнопка, соцсети (ссылки и email настроены)
 - Деплой на GitHub Pages
 
 ## Что не готово
-- Ссылки соцсетей и email
 - Мобильная адаптация

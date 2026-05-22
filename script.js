@@ -222,7 +222,7 @@ const copyFeedback = document.querySelector('.copy-feedback');
 
 copyEmailBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const email = 'hello@julianvanguard.com'; // Replace with actual email later
+    const email = 'hudiavova@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
         copyFeedback.classList.add('show');
         setTimeout(() => {
