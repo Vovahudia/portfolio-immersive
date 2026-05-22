@@ -12,7 +12,7 @@
 - `index.html` — вся разметка
 - `style.css` — все стили
 - `script.js` — вся логика
-- `wireframe.html` — только начальная структура ui
+- `wireframe.html` — только начальная структура ux
 
 ---
 

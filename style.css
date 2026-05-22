@@ -469,6 +469,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .project-card.large, .project-card.wide { grid-column: 1 / -1; }
@@ -477,9 +478,41 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     width: 100%;
     height: 60vh;
-    background-color: #111;
-    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    border: 3px solid var(--text-color);
+    box-shadow: 6px 6px 0px var(--border-color);
     overflow: hidden;
+    transition: border-color 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+/* CRT Scanlines and overlay */
+.project-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.45) 50%);
+    background-size: 100% 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: opacity 0.4s var(--ease-out-expo);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: color-burn;
+    transition: opacity 0.4s var(--ease-out-expo);
 }
 
 .project-card:not(.large):not(.wide) .project-image-wrapper { height: 70vh; }
@@ -489,7 +522,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.6s var(--ease-out-expo);
+    filter: grayscale(100%) contrast(1.25) brightness(0.65);
+    mix-blend-mode: luminosity;
+    transition: filter 0.5s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
 }
 
 .bg-1 { background-image: url('assets/dontfilm_landing.png'); }
@@ -497,8 +532,24 @@ h1, h2, h3, h4, h5, h6 {
 .bg-3 { background-image: url('assets/dontfilm_logo.jpg'); }
 .bg-4 { background-image: url('assets/ideogram.png'); }
 
+/* Hover States */
+.project-card:hover .project-image-wrapper {
+    border-color: var(--accent-green);
+    box-shadow: 12px 12px 0px var(--accent-green);
+}
+
+.project-card:hover .project-image-wrapper::after {
+    opacity: 0.15; /* Subtler scanlines on hover */
+}
+
+.project-card:hover .project-overlay {
+    opacity: 0;
+}
+
 .project-card:hover .project-image {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    filter: grayscale(0%) contrast(1) brightness(1);
+    mix-blend-mode: normal;
 }
 
 .project-info {
@@ -506,6 +557,11 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     border-top: 4px solid var(--text-color);
     padding-top: 0.5rem;
+    transition: border-color 0.4s var(--ease-out-expo);
+}
+
+.project-card:hover .project-info {
+    border-color: var(--accent-green);
 }
 
 .project-meta {
@@ -515,7 +571,15 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-.project-title { font-size: clamp(2rem, 5vw, 5rem); }
+.project-title { 
+    font-size: clamp(2rem, 5vw, 5rem); 
+    transition: color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+}
+
+.project-card:hover .project-title {
+    color: var(--accent-green);
+    transform: translateX(10px);
+}
 
 .project-role {
     font-family: var(--font-chaos);

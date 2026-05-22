@@ -22,10 +22,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
+        
+        // Ensure letstalk CTA (which also has href="#") doesn't scroll to top if not intended,
+        // Actually, the footer-cta is for email copying, not scrolling, so we should skip it.
         if (this.id === 'copy-email-btn') return;
 
         if (targetId === '#') {
-            lenis.scrollTo(0, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+            lenis.scrollTo(0, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) }); // Scroll to top
         } else {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
@@ -97,6 +100,7 @@ projectCards.forEach(card => {
 window.addEventListener('load', () => {
     const tl = gsap.timeline();
     
+    // Simulate loading
     let counter = { value: 0 };
     tl.to(counter, {
         value: 100,
@@ -134,7 +138,7 @@ gsap.to('.hero-headline .sliced-text', {
     scrollTrigger: {
         trigger: '.hero',
         start: 'top top',
-        end: 'top -30%',
+        end: 'top -30%', // Finishes faster, before section is fully scrolled
         scrub: 1
     },
     '--slice-x1': '0px',
@@ -208,7 +212,9 @@ function generateNoise() {
     }
     ctx.putImageData(idata, 0, 0);
 }
+// Render static noise once to save performance
 generateNoise();
+
 
 // Copy to Clipboard (Email)
 const copyEmailBtn = document.getElementById('copy-email-btn');
