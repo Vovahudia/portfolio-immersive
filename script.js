@@ -157,18 +157,48 @@ gsap.to('.hero-headline .sliced-text', {
 // About Section Text Reveal
 // Wait for fonts to load before splitting text to ensure correct line breaks
 document.fonts.ready.then(() => {
-    const splitManifesto = new SplitType('.manifesto-text', { types: 'lines, words' });
-    gsap.to(splitManifesto.words, {
-        scrollTrigger: {
-            trigger: '.about',
-            start: 'top 80%',
-            end: 'center center',
-            scrub: 1
-        },
-        y: '0%',
-        stagger: 0.1,
-        ease: 'power1.out',
-        duration: 1
+    let splitManifesto;
+    let animation;
+
+    function initSplit() {
+        // Kill previous ScrollTrigger and animation to prevent duplicates/leaks
+        if (animation) {
+            if (animation.scrollTrigger) animation.scrollTrigger.kill();
+            animation.kill();
+        }
+        // Restore original text structure before re-splitting
+        if (splitManifesto) {
+            splitManifesto.revert();
+        }
+
+        // Re-split the text based on new dimensions
+        splitManifesto = new SplitType('.manifesto-text', { types: 'lines, words' });
+        
+        // Set initial visual offset
+        gsap.set(splitManifesto.words, { y: '110%' });
+
+        // Build fresh ScrollTrigger animation
+        animation = gsap.to(splitManifesto.words, {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top 80%',
+                end: 'center center',
+                scrub: 1
+            },
+            y: '0%',
+            stagger: 0.1,
+            ease: 'power1.out',
+            duration: 1
+        });
+    }
+
+    initSplit();
+
+    // Recalculate SplitType and ScrollTrigger on window resize (debounced)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initSplit, 200);
     });
 });
 
@@ -191,13 +221,6 @@ gsap.utils.toArray('.project-card').forEach((card, i) => {
 const canvas = document.getElementById('noise-canvas');
 const ctx = canvas.getContext('2d');
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
 function generateNoise() {
     const w = canvas.width;
     const h = canvas.height;
@@ -212,8 +235,14 @@ function generateNoise() {
     }
     ctx.putImageData(idata, 0, 0);
 }
-// Render static noise once to save performance
-generateNoise();
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    generateNoise(); // Re-render static noise since resize clears the canvas
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 
 // Copy to Clipboard (Email)
