@@ -376,29 +376,29 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    transform: translateY(5rem); /* Lowered further per user request */
+    gap: 0.8rem;
+    transform: translateY(0); /* Keep within hero bounds */
+    animation: indicator-bounce 2.2s infinite ease-in-out;
 }
 
 .indicator-text {
     font-family: var(--font-heading);
-    font-size: 0.85rem; /* Scaled down */
+    font-size: 0.85rem;
     writing-mode: vertical-rl;
     color: var(--accent-green);
 }
 
 .indicator-line {
-    width: 4px;
-    height: 60px;
-    background-color: rgba(57, 255, 20, 0.3); /* Neon green with opacity */
+    width: 2px;
+    height: 40px;
+    background-color: var(--accent-green); /* Solid green */
 }
 
 .indicator-arrow {
-    margin-top: -0.2rem;
-    animation: arrow-bounce 2s infinite ease-in-out;
+    margin-top: -0.9rem; /* Perfectly overlaps the line end to connect them */
 }
 
-@keyframes arrow-bounce {
+@keyframes indicator-bounce {
     0%, 100% {
         transform: translateY(0);
     }
