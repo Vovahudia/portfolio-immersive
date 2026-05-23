@@ -386,6 +386,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.85rem;
     writing-mode: vertical-rl;
     color: var(--accent-green);
+    line-height: 1; /* Removes baseline spacing offset in vertical-rl */
 }
 
 @keyframes indicator-bounce {
